@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Bitácoras | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="alternate" type="application/rss+xml" title="RSS: blogs" href="feed/" />
+
+<link rel="shortcut icon" href="../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../sites/files/css/dcff1dba2c9ca48349d1d3d1da9684d4/index.css" />
+  <script type="text/javascript" src="../sites/files/js/e3b052005d434e46b28c39f89dc62389/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-blog no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="/"><img src="../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271 active-trail active"><a href="index.html" title="Documentación" class="active">Documentación</a></li>
+<li class="menu-272"><a href="../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Bitácoras</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <div class="item-list"></div><div id="node-27" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/instalando-drush-en-windows-xp/" title="instalando drush en windows xp">instalando drush en windows xp</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Mié, 06/02/2010 - 11:57.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Primero descargamos la ultima version de <a href="../../www.drupal.org/project/drush.42/index.delayed">drush</a>. Podemos utilizar la version HEAD sin mayores complicaciones. </p>
+<p>Hay que tener presente que la carpeta donde se descompacte debe estar aparte del raiz del sitio web.</p>
+<p>Antes de probar el drush nos debemos asegurar de que el php funcione desde la linea de comando. Para esto, al abrir la ventana del Simbolo de sistema y teclear php</p>
+<p>Mi PC -&gt; right click -&gt; Propiedades<br />
+Opciones AVanzadas -&gt; Variables de entorno<br />
+Variables del sistema<br />
+Path<br />
+Modificar</p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_add"><a href="../comment/reply/27/#comment-form" title="Añadir un comentario nuevo a esta página.">Añadir nuevo comentario</a></li>
+<li class="node_read_more last"><a href="osvaldo/instalando-drush-en-windows-xp/" title="Leer el resto de instalando drush en windows xp.">Leer más</a></li>
+</ul></div>
+<div id="node-25" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/formateando-campos-cck-en-un-template/" title="formateando campos cck en un template">formateando campos cck en un template</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Vie, 09/04/2009 - 15:00.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Cuando utilizaba un template (.tpl.php) para hacer el theming de un node creado a partir de un tipo de contenido cualquiera, solia imprimir los campos de esta manera:</p>
+<blockquote><p>&lt;?<br />&nbsp;php print $node-&gt;field_location[0]['value']; <br />?&gt;</p></blockquote>
+<p>pero ...<br />en primer lugar, eso funciona bien para los campos texto, pero no todos son texto..<br />algunos son taxonomias.. que se mostrarian asi:</p>
+<blockquote><p>&nbsp;&nbsp;&nbsp; &lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $term = taxonomy_get_term($node-&gt;field_city[0]['value']);</p>
+</blockquote>  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_comments"><a href="osvaldo/formateando-campos-cck-en-un-template/#comments" title="Ir al primer comentario de este envío.">2 comments</a></li>
+<li class="node_read_more last"><a href="osvaldo/formateando-campos-cck-en-un-template/" title="Leer el resto de formateando campos cck en un template.">Leer más</a></li>
+</ul></div>
+<div id="node-24" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando/" title="creando nuevos sitios en un multisite con un comando">creando nuevos sitios en un multisite con un comando</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Lun, 08/03/2009 - 00:38.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Una de las ventajas de utilizar Drupal es beneficiarnos de su capacidad multisitio. Esto es poder tener sitios independientes (tanto en contenido como en nombre de dominio) en una misma instalación de un Drupal.</p>
+<p>Este es un script que había armado hace algun tiempo atrás y hoy lo <a target="_blank" href="http://groups.drupal.org/node/23583#comment-86096">posteé</a> en el grupo de usuarios de Argentina respondiendole a alguien que pedia algo similar.</p>
+<p>Dejo aca otra copia para tenerlo más accesible.</p>
+<blockquote><p>#!/bin/sh</p>
+</blockquote>  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_comments"><a href="osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando/#comments" title="Ir al primer comentario de este envío.">1 comment</a></li>
+<li class="node_read_more last"><a href="osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando/" title="Leer el resto de creando nuevos sitios en un multisite con un comando.">Leer más</a></li>
+</ul></div>
+<div id="node-22" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/utilizando-aegir/" title="Utilizando Aegir">Utilizando Aegir</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Lun, 06/29/2009 - 02:55.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Esta es la tercera y última parte de los artículos que acompañan la charla impartida en el Drupalcamp de Buenos Aires el pasado Junio 25 de 2009.</p>
+<p>El trabajo con Aegir es muy sencillo desde el propio instante en que lo instalamos.</p>
+<p>Puede consultar en flickr una <a target="_blank" href="http://www.flickr.com/photos/39919907@N04/sets/72157620560296723/">galeria que muestra como utilizar Aegir</a>.</p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_add"><a href="../comment/reply/22/#comment-form" title="Añadir un comentario nuevo a esta página.">Añadir nuevo comentario</a></li>
+<li class="node_read_more last"><a href="osvaldo/utilizando-aegir/" title="Leer el resto de Utilizando Aegir.">Leer más</a></li>
+</ul></div>
+<div id="node-21" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/instalando-aegir/" title="Instalando Aegir">Instalando Aegir</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Sáb, 06/27/2009 - 14:51.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p><img src="../sites/files/aegir/index.png" /><br />
+<a href="http://groups.drupal.org/aegir-hosting-system" title="http://groups.drupal.org/aegir-hosting-system">http://groups.drupal.org/aegir-hosting-system</a></p>
+<p><b>¿Que es Aegir?</b></p>
+<p><i>versión sencilla</i><br />Ægir  es un conjunto de módulos para Drupal que le permiten administrar varios sitios en Drupal de forma simúltanea y centralizada. </p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_add"><a href="../comment/reply/21/#comment-form" title="Añadir un comentario nuevo a esta página.">Añadir nuevo comentario</a></li>
+<li class="node_read_more last"><a href="osvaldo/instalando-aegir/" title="Leer el resto de Instalando Aegir.">Leer más</a></li>
+</ul></div>
+<div id="node-20" class="node clear-block blog-content">
+
+
+  <h2><a href="osvaldo/utilizando-drush/" title="Utilizando Drush">Utilizando Drush</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Sáb, 06/27/2009 - 01:37.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p><b>Charla sobre Drush en el Drupalcamp de Buenos Aires</b></p>
+<p><a href="http://drupal.org/project/drush" title="http://drupal.org/project/drush">http://drupal.org/project/drush</a><br />Drush fue creado originalmente por Arto para Drupal 4.7 (este código alfa aún se puede encontrar en la rama DRUPAL-4-7). En Mayo del 2007, fue parcialmente reescrito y rediseñado para Drupal 5 por frando. Desde el 2008, este módulo ha sido mantenido por Moshe Weitzman, Owen Barton y Adrian Rossouw.</p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first"><a href="../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+<li class="comment_comments"><a href="osvaldo/utilizando-drush/#comments" title="Ir al primer comentario de este envío.">1 comment</a></li>
+<li class="node_read_more last"><a href="osvaldo/utilizando-drush/" title="Leer el resto de Utilizando Drush.">Leer más</a></li>
+</ul></div>
+
+
+      </div><!-- main-content -->
+
+      <a href="feed/" class="feed-icon"><img src="../misc/feed/index.png" alt="Distribuir contenido" title="RSS: blogs" width="16" height="16" /></a>    </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="index.html" title="Documentación" class="active">Documentación</a><ul class="menu"><li class="leaf last"><a href="index.html" title="Blog" class="active">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

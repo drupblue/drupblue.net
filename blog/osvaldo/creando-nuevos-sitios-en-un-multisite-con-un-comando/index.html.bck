@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>creando nuevos sitios en un multisite con un comando | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/files/css/e885ea252dd284875c6decef277d9457/index.css" />
+  <script type="text/javascript" src="../../../sites/files/js/6f0a5bac51e4ded39fc45de857b4c240/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-blog no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="../..//"><img src="../../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">creando nuevos sitios en un multisite con un comando</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <div id="node-24" class="node clear-block blog-content">
+
+
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Lun, 08/03/2009 - 00:38.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Una de las ventajas de utilizar Drupal es beneficiarnos de su capacidad multisitio. Esto es poder tener sitios independientes (tanto en contenido como en nombre de dominio) en una misma instalación de un Drupal.</p>
+<p>Este es un script que había armado hace algun tiempo atrás y hoy lo <a target="_blank" href="http://groups.drupal.org/node/23583#comment-86096">posteé</a> en el grupo de usuarios de Argentina respondiendole a alguien que pedia algo similar.</p>
+<p>Dejo aca otra copia para tenerlo más accesible.</p>
+<blockquote><p>#!/bin/sh</p>
+<p>echo "creando un nuevo sitio: $1"<br />[ -n "$1" ] &amp;&amp; [ -n "$2" ]&nbsp; &amp;&amp; [ -n "$3" ] &amp;&amp; [ -n "$4" ] || { echo "usar: $0 dominio database dbuser dbpasswd"; exit 1; }</p>
+<p>[ -d "sites/$1" ] &amp;&amp; { echo "el sitio $1 ya existe, eliminelo primero"; exit 1;}</p>
+<p>mysqladmin -u root -pPassword create $2<br />echo |&nbsp; mysql -u root -pPassword &lt;&lt; EOF<br />GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER<br />ON $2.*<br />TO '$3'@'localhost' IDENTIFIED BY '$4';<br />EOF</p>
+<p>mkdir -p sites/$1/files<br />chown www-data sites/$1/files</p>
+<p>cat &gt; sites/$1/settings.php &lt;&lt; EOF<br />&lt;?php<br />// \$Id: </p>
+<p>\$db_url = 'mysql://$3:$4@localhost/$2';<br />\$db_prefix = '';</p>
+<p>\$update_free_access = TRUE;<br /># \$base_url = 'http://www.example.com';&nbsp; // NO trailing slash!<br />ini_set('arg_separator.output',&nbsp;&nbsp;&nbsp;&nbsp; '&amp;amp;');<br />ini_set('magic_quotes_runtime',&nbsp;&nbsp;&nbsp;&nbsp; 0);<br />ini_set('magic_quotes_sybase',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0);<br />ini_set('session.cache_expire',&nbsp;&nbsp;&nbsp;&nbsp; 200000);<br />ini_set('session.cache_limiter',&nbsp;&nbsp;&nbsp; 'none');<br />ini_set('session.cookie_lifetime',&nbsp; 2000000);<br />ini_set('session.gc_maxlifetime',&nbsp;&nbsp; 200000);<br />ini_set('session.save_handler',&nbsp;&nbsp;&nbsp;&nbsp; 'user');<br />ini_set('session.use_only_cookies', 1);<br />ini_set('session.use_trans_sid',&nbsp;&nbsp;&nbsp; 0);<br />ini_set('url_rewriter.tags',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '');<br />EOF</p></blockquote>
+<p>No olvidar cambiar la contraseña del usuario root del mysql (en el script, -pPassword, donde Password sería la contraseña). De hecho, se debe evitar almacenar la contraseña del usuario root del mysql en un script (se aceptan sugerencias para mejorar el script ).<br />Solo queda darle permisos de ejecución al script y listo (chmod 755 newsite.sh basta suponiendo que el nombre del script es newsite.sh).</p>
+<p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=c8206a54-ed79-86a6-8de2-41aeb18c63af" /></div>
+</p>  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+</ul></div>
+<div id="comments">
+  <a id="comment-2"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="index.html#comment-2" class="active">compañero, hace mucho que no</a></h3>
+
+  <div class="submitted">
+    Enviado  por <a href="http://www.documentados.com/" rel="nofollow">oskar calvo</a> (no verificado) el  Jue, 08/05/2010 - 03:49.  </div>
+
+  <div class="content">
+    <p>compañero, hace mucho que no te veo por el IRC, a ver si coincidimos un día.</p>
+<p>Tengo una jartada de idea para un módulo, que consiste en algo tan sencillo ( y dificil) de según un usuario crea un módulo se genera un subodiminio con el título del módulo como subdominio. Esto que parece sencillo a primera vista, le estoy dando vueltas y vueltas.</p>
+<p>A ver si entre los dos podemos rumiarlo más para montar un módulo con lo que te comento.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="../../../comment/reply/24/2/">responder</a></li>
+</ul></div>
+<div class="box">
+
+  <h2>Enviar un comentario nuevo</h2>
+
+  <div class="content"><form action="http://www.drupblue.net/comment/reply/24"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Su nombre: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Página principal: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comentario: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea required"></textarea>
+</div>
+<div class="wysiwyg wysiwyg-format-1 wysiwyg-editor-none wysiwyg-field-edit-comment wysiwyg-status-1 wysiwyg-toggle-1 wysiwyg-resizable-1"><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div><p><a href="../../../filter/tips/">Más información sobre opciones de formato</a></p><input type="hidden" name="form_build_id" id="form-d2a82fd6c92e7e94e48d345e5db2d4e7" value="form-d2a82fd6c92e7e94e48d345e5db2d4e7"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-preview" value="Previsualizar"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

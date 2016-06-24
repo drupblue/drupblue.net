@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Palette | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/files/css/dcff1dba2c9ca48349d1d3d1da9684d4/index.css" />
+  <script type="text/javascript" src="../../sites/files/js/e3b052005d434e46b28c39f89dc62389/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-website no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="..//"><img src="../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../blog/" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Palette</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        
+<div id="node-13" class="node clear-block">
+
+
+
+  <div class="content grid-12 clear-block alpha">
+    
+    <div id="webdata" class="grid-4 clear-block alpha">
+      <div id="webdata" class="grid-4 clear-block alpha">
+      Sitio web desarrollado sobre Drupal.      </div>
+    <div id="webdata" class="grid-4 clear-block alpha">
+      <a href="http://www.paletteonline.com.ar/" target="_blank" rel="nofollow">http://www.paletteonline.com.ar/</a>      </div>
+    </div>
+    <div id="webpic" class="grid-8 clear-block omega">
+    <a href="http://www.paletteonline.com.ar/"><img src="../../sites/files/imagecache/imagen-slideshow/palette/index.png" alt="" title=""  width="400" height="300" /></a>    </div>
+  </div>
+  </div>
+  
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../blog/" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../blog/" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

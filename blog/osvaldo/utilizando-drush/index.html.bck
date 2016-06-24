@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Utilizando Drush | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/files/css/e885ea252dd284875c6decef277d9457/index.css" />
+  <script type="text/javascript" src="../../../sites/files/js/6f0a5bac51e4ded39fc45de857b4c240/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-blog no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="../..//"><img src="../../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Utilizando Drush</h1>
+                  <div class="messages error">
+ <ul>
+  <li>: Function split() is deprecated in /var/www/drupal/palette/modules/filter/filter.module on line 895.</li>
+  <li>: Function split() is deprecated in /var/www/drupal/palette/modules/filter/filter.module on line 895.</li>
+ </ul>
+</div>
+      
+      <div id="main-content" class="region clear-block">
+        <div id="node-20" class="node clear-block blog-content">
+
+
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Sáb, 06/27/2009 - 01:37.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p><b>Charla sobre Drush en el Drupalcamp de Buenos Aires</b></p>
+<p><a href="http://drupal.org/project/drush" title="http://drupal.org/project/drush">http://drupal.org/project/drush</a><br />Drush fue creado originalmente por Arto para Drupal 4.7 (este código alfa aún se puede encontrar en la rama DRUPAL-4-7). En Mayo del 2007, fue parcialmente reescrito y rediseñado para Drupal 5 por frando. Desde el 2008, este módulo ha sido mantenido por Moshe Weitzman, Owen Barton y Adrian Rossouw.</p>
+<p>Drush es al mismo tiempo una interface de programacion Unix y un shell de linea de comando para Drupal. Una verdadera navaja suiza diseñada para hacer más fácil la vida de aquellos que dedican gran parte de su horario laboral sentados frente a una linea de comandos.</p>
+<p><b>Background</b></p>
+<p>En la actualidad es muy común que un software dependa de otros para su funcionamiento. Estas dependencias se resuelven mediante el uso de los manejadores de paquetes. Para el caso de Debian, Ubuntu y derivativos, es familiar el comando apt-get. Para los usuarios de RedHat, Fedora y derivativos, sería el comando yum. Estos comandos permiten instalar aplicaciones, desinstalarlas, actualizarlas, todo esto desde la línea de comandos. Ellos se encargan de resolver todas las dependencias y mantener el sistema en un estado estable.</p>
+<p>En Drupal tenemos a Drush, cuya función es muy similar a la de estos comandos recién mencionados.</p>
+<p><b>Principales caracteristicas de drush</b></p>
+<ul>
+<li>Trabajo con paquetes. El manejador de paquetes drush le permite descargar, habilitar, deshabilitar, desinstalar y actualizar módulos, temas, perfiles y traducciones desde la linea de comandos (con respecto a hacer el cafe ver mas adelante).</li>
+<li>Actualizaciones. Drush le permite actualizar sus modulos con un solo comando: drush update</li>
+<li>Tareas administrativas. Ejecutar el cron, limpiar la cache.</li>
+<li>Interacción con la base de datos. Nos permite exportar/importar la base de datos. Tambien podemos ejecutar consultas, ver las credenciales (usuario/contraseña) de acceso a la base de datos.</li>
+</ul>
+<p>ok, ok, lo voy a comprar, que tengo que hacer ...</p>
+<p><b>Instalación</b></p>
+<p><b>¿Que versión instalo?</b></p>
+<p>Originalmente Drush era un módulo de Drupal y se instalaba como uno más. </p>
+<p>Para la  versión 2.0 se hizo una importante reescritura del código y entre los resultados de dicho esfuerzo tenemos que esta nueva versión es independiente de la versión de Drupal que estemos utilizando.</p>
+<p>En la página del proyecto solo hay dos paquetes:</p>
+<p>La versión oficial (official release):<br /><a href="http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz" title="http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz">http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz</a></p>
+<p>La versión de desarrollo (development snapshot):<br /><a href="http://ftp.drupal.org/files/projects/drush-All-Versions-HEAD.tar.gz" title="http://ftp.drupal.org/files/projects/drush-All-Versions-HEAD.tar.gz">http://ftp.drupal.org/files/projects/drush-All-Versions-HEAD.tar.gz</a></p>
+<p>No importa que versión de Drupal este utilizando, la versión de Drush va a ser la misma en cualquier caso (ya sea la estable o la de desarrollo).</p>
+<p>Si tenia instalado una versión anterior de drush, deberá desinstalarla y su directorio. Lo mismo para cualquier otro módulo relacionado (drush_extras, drush_mm, etc).</p>
+<p><b>Instalación</b></p>
+<p><b>1. Descargar el archivo y descompactarlo en una carpeta fuera del raiz del sitio web (/path/to/drush).</b></p>
+<p>(para este ejemplo: /path/to/drush = /var/www/drush).<br />
+Nota. es solo una decisión personal del autor guardar todo lo que sea web en la carpeta /var/www. Cada usuario puede establecer el lugar que mejor se ajuste a sus necesidades.</p>
+<blockquote><p>
+cd<br />
+wget <a href="http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz" title="http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz">http://ftp.drupal.org/files/projects/drush-All-Versions-2.0.tar.gz</a><br />
+cd /var/www<br />
+sudo tar zxf ~/drush-All-Versions-2.0.tar.gz
+</p></blockquote>
+<p>
+Al descompactar este archivo se crea el directorio /var/www/drush con los archivos del modulo. Borrar el .tgz si no hace falta.<br />
+<b><br />2. Otorgarle permisos de ejecución al comando drush</b></p>
+<blockquote><p>
+chmod u+x /path/to/drush/drush
+</p></blockquote>
+<p><b>3. Crear enlace simbolico</b> <br />
+Opcional, pero recomendado. Puede ser de cualquiera de las dos formas siguientes:</p>
+<p>a) crear un enlace a drush en un directorio que este en el $PATH:</p>
+<blockquote><p>
+      ln -s /path/to/drush/drush /usr/bin/drush
+</p></blockquote>
+<p>b) crear un alias para el comando drush:</p>
+<blockquote><p>
+       alias drush='/path/to/drush/drush'
+</p></blockquote>
+<p>Si utiliza bash. Esto puede ir al final del archivo <i>~/.bashrc</i></p>
+<p><b>¿Donde instalar drush?</b></p>
+<p>Fuera del directorio raiz del sitio web. Para este ejemplo se instalo en /var/www/drush. </p>
+<p>Para mas información consultar:</p>
+<p>allow drush files to be installed in standard locations - <a href="http://drupal.org/node/459678" title="http://drupal.org/node/459678">http://drupal.org/node/459678</a><br />Packaging Drush for Debian - <a href="http://drupal.org/node/461488" title="http://drupal.org/node/461488">http://drupal.org/node/461488</a></p>
+<p>Existe un paquete .deb disponible que lo instala en /usr/share/drush&nbsp; y crea de ahi un enlace simbólico en /usr/bin/drush. Disponible en:<br /><a href="http://debian.koumbit.net/debian/dists/unstable/main/binary-all/admin/" title="http://debian.koumbit.net/debian/dists/unstable/main/binary-all/admin/">http://debian.koumbit.net/debian/dists/unstable/main/binary-all/admin/</a></p>
+<p><b>Tareas comunes</b></p>
+<p><b>Trabajo con paquetes</b><br />El manejador de paquetes drush le permite descargar, habilitar, deshabilitar, desinstalar y actualizar módulos, temas, perfiles y traducciones desde la linea de comandos (con respecto a hacer el cafe ver mas adelante).</p>
+<p><b>Actualizaciones</b><br />Drush le permite actualizar sus modulos con un solo comando: <i>drush update</i></p>
+<p><b>Tareas administrativas</b><br />Ejecutar el cron: <i>drush cron </i><br />Limpiar la cache: <i>drush cache clear</i></p>
+<p><b></b></p>
+<p>Interacción con la base de datos<br />Nos permite exportar/importar la base de datos: <i>drush sql dump</i>, <i>drush sql load</i><br />
+Ejecutar consultas:</p>
+<blockquote><p>
+osvaldo@vostro:/var/www/drupal$ drush sql query "select count(*) from node;"<br />
+count(*)<br />
+32
+</p></blockquote>
+<p><b>Comando básicos</b></p>
+<p>
+Si drush se ejecuta solo aparece la ayuda de manera predeterminada con un listado de los comandos disponibles.<br />
+[ejecutar comando drush ]</p>
+<blockquote>
+<pre>
+osvaldo@vostro:~$ drush
+Ejecuta un comando de drush. Ejecute 'drush help [comando]' para visualizar ayuda especifica a dicho comando.
+
+Ejemplos:
+ drush dl cck zen     Descargar el módulo CCK y el tema  Zen. 
+ drush --uri=http://example.com status     Muestra el comando status para el sitio perteneciente a una instalación multisite example.com.
+ drush help --pipe                         Genera la lista  de comandos delimitada por espacios. 
+
+Opciones:
+ -r <path>, --root=<path>   Directorio raiz de la instalación de Drupal que se va a utilizar (por defecto: directorio actual)
+ -l <uri> , --uri=<uri>     URI del sitio drupal que vamos a utilizar (necesaria solo en ambientes multisitios)
+ -v, --verbose              Muestra información extra durante la  ejecución del comando.
+ -d, --debug                Muestra aún mas información, incluyendo mensajes internos.
+ -q, --quiet                Oculta toda salida (al ejecutar el comando en el shell).
+ -y, --yes                  Asume "si' como respuesta a todas las preguntas.
+ -s, --simulate             Simula las acciones a realizar pero no ejecuta ninguna realmente.
+ -i, --include              Permite adicionar un listado de paths donde buscar comandos de drush.
+ -c, --config               Permite especificar que fichero de configuración vamos a utilizar. 
+                            Consultar el ejemplo example.drushrc.php                  
+ -u, --user                 Permite especificar el usuario con el que vamos a iniciar sesión. Puede ser un número o un nombre.
+ -b, --backend              Esconde la salida estandard y retorna solamente datos estructurados (solo se utiliza para uso interno).
+ -p, --pipe                 Genera una representación compacta del comando para utilizarla en scripts.
+
+Comandos:
+
+help		  Imprime este mensaje de ayuda. Utilice --filter para especificar un comando en particular (e.g. --filter=pm)
+cron	    Ejecuta todos los hooks de cron.
+updatedb	Ejecuta el proceso update.php desde la linea de comando.
+status	  Proporciona una vista general de la instalación actual de Drupal, si hubiera una 
+        (útil para confirmar si el sitio sobre el que se esta ejecutando los comandos de drush es el que nos interesa).
+script	Ejecuta script(s) php.
+cache clear	    Borra todos los caches.
+watchdog show	  Muestra los mensajes de trazas (watchdog) recientes. 
+                Opcionalmente permite filtrar en base a un tipo determinado.
+watchdog delete	Elimina todos los mensajes o solo aquellos de un tipo especifico.
+sync	  Sincroniza el árbol de Drupal desde o hacia otro servidor utilizando ssh y rsync.
+eval	  Evalua codigo php árbitrario después de iniciar (bootstrapping) Drupal.
+enable	Habilita uno ó más módulos
+disable	Deshabilita uno ó más módulos.
+unistall	  Desinstala uno ó más módulos.
+statusmodules	  Muestra el estado de los módulos  (habilitados o deshabilitados).
+refresh	  Refresca la información sobre el status de actualización de los paquetes instalados.
+updatecode	Actualiza el código del proyecto.
+update	Actualiza el código del proyecto y aplica cualquier actualizacion requerida en la base de datos (update.php)
+info		Muestra información sobre un proyecto.
+dl		Descarga el core de Drupal y proyectos como CCK, Zen, etc.
+test mail Ejecuta todos los tests y envia los resultados por email al team.
+test clean	Elimina las tablas y archivos remanentes de anteriores ejecuciones de test.
+
+sql conf	Imprime los detalles de la conexión a la base de datos
+sql connect	Imprime el comando mysql para conectarse a la base de datos
+sql dump	Exporta la base de datos de drupal como un archivo SQL utilizando mysqldump
+sql query	Ejecuta una cosulta contra la base de datos del sitio
+sql load	Copia la base de datos hacia la base de datos del sitio.
+sql cli	Abre una interface de linea de comandos SQL utilizando las credenciales del sitio en Drupal.
+</uri></uri></path></path></pre></blockquote>
+<p><b></b></p>
+<p>Ejemplos:</p>
+<p><b></b></p>
+<p>instalando (descargando) <br /><b>modulos</b><br />
+<blockquote>root@vostro:/var/www/drupal# drush dl fivestar<br />Project fivestar (6.x-1.15) downloaded to                            [success]<br />/var/www/drupal/sites/all/modules/.</blockquote></p>
+<p><b>temas</b><br />
+<blockquote>root@vostro:/var/www/drupal# drush dl nitobe <br />Project nitobe (6.x-3.4) downloaded to                               [success]<br />/var/www/drupal/sites/all/themes/.</blockquote></p>
+<p><b>traducciones</b><br />
+<blockquote>root@vostro:/var/www/drupal# drush dl it<br />Project it (6.x-1.4) downloaded to /var/www/drupal/.                 [success]<br />root@vostro:/var/www/drupal# ls -l modules/aggregator/translations/<br />total 44<br />-rw-r--r-- 1 root root 17835 2009-02-14 13:25 modules-aggregator.es.po<br />-rw-r--r-- 1 1080 1080 22473 2008-12-07 14:05 modules-aggregator.it.po</blockquote></p>
+<p>Las últimas versiones de drush detectan automáticamente cuando se trata de un módulo, un tema o una traducción y son capaces de instalarlos en los directorios correspondientes (de manera predeterminada en sites/all/modules o sites/all/themes, aunque esto es modificable definiendo <i>--destination</i>, para mas información, ejecute <i>drush help dl</i>)</p>
+<p><b>mas comandos:</b><br /><b>ver las versiones disponibles de un módulo</b><br />
+<blockquote>osvaldo@vostro:~$ drush -r /var/www/drupal-6.10/ info backup_migrate<br /> Project         Release      Fecha       <br /> backup_migrate  6.x-2.x-dev  2009-Jun-04 <br /> backup_migrate  6.x-1.2      2009-Ene-18 <br /> backup_migrate  6.x-1.0      2008-Ago-13 <br /> backup_migrate  6.x-1.x-dev  2009-Feb-18 </blockquote></p>
+<p><b>instalar una versión en particular</b><br />
+<blockquote>osvaldo@vostro:~$ drush -r /var/www/drupal-6.10/ dl backup_migrate-2.x-dev</blockquote></p>
+<p><b>Listado de módulos vinculados con drush:</b></p>
+<p><a href="http://drupal.org/taxonomy/term/4654" title="http://drupal.org/taxonomy/term/4654">http://drupal.org/taxonomy/term/4654</a></p>
+<p>Estos módulos le adicionan funcionalidad al comando drush. De esta manera, utilizando el mismo comando drush, va a tener acceso a nuevo grupo de opciones.</p>
+<p><b>Drush System Manager</b><br /><a href="http://drupal.org/project/drush_sm" title="http://drupal.org/project/drush_sm">http://drupal.org/project/drush_sm</a></p>
+<p>El Drush System Manager le permite exportar a archivos tanto variables, como el código para la creación de los cck y las views existentes en Drupal. De esta manera, puede adicionar estos archivos a un sistema de control de versiones, como subversion, y mantener un control sobre los cambios que se van haciendo en el sistema a los mismos por el resto del equipo.</p>
+<p>opciones que ofrece este módulo:<br />
+<blockquote>sm list cck : list from cck with arguments:                                                                                    <br />sm export cck : export from cck with arguments: stdout or directory<br />sm list variables : list from variables with arguments: variable name(s) or part of a variable name<br />sm export variables : export from variables with arguments: stdout or directory followed by variable name(s) or part of a variable name<br />sm report variables : report from variables with arguments: variable name(s) or part of a variable name<br />sm import variables : import from variables with arguments: stdout or directory<br />sm list views : list from views with arguments:<br />sm export views : export from views with arguments: stdout or directory followed by view name(s) </blockquote></p>
+<p>Dos cosas a mencionar respecto a este módulo. La primera es que todavía se encuentra en desarrollo. Funcionalidades como la de importar los cck o las views aún es posible que tenga errores. La otra es que, a diferencia del Drush, este módulo se va a instalra como un módulo del sitio en Drupal en el cual se vaya a utilizar. A diferencia del Drush que es independiente de la instalación del Drupal, este módulo si funciona directamente con la información del sitio y por lo tanto, si depende del sitio (las views no son iguales en un D5 que en un D6).</p>
+<p><b>instalacion</b><br />Puede descargar de la página del proyecto, en este caso sería este archivo:<br /><a href="http://ftp.drupal.org/files/projects/drush_sm-6.x-2.x-dev.tar.gz" title="http://ftp.drupal.org/files/projects/drush_sm-6.x-2.x-dev.tar.gz">http://ftp.drupal.org/files/projects/drush_sm-6.x-2.x-dev.tar.gz</a></p>
+<p>O mejor, hágalo a la manera drush ;)</p>
+<blockquote><p>root@vostro:/var/www/drupal/sites# drush dl drush_sm<br />Project drush_sm (6.x-2.x-dev) downloaded to                         [success]<br />/var/www/drupal/sites/all/modules/.<br />root@vostro:/var/www/drupal/sites# drush enable drush_sm<br />The following modules will be enabled: drush_sm<br />Do you really want to continue? (y/n): y<br />Drush System Manager was enabled successfully.                       [ok]<br />root@vostro:/var/www/drupal/sites# </p></blockquote>
+<p>Si ejecutamos ahora el comando drush veremos al final los nuevos comandos disponibles:</p>
+<blockquote><p>root@vostro:/var/www/drupal/sites# drush <br />Execute a drush command. Run `drush help [command]` to view command-specific<br />help.<br />....<br />&nbsp;generate users&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates users.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;generate taxonomy&nbsp;&nbsp;&nbsp;&nbsp; Creates taxonomy.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;generate content&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Creates content.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm list cck&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list from cck with arguments:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm export cck&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export from cck with arguments: stdout or directory&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm list variables&nbsp;&nbsp;&nbsp;&nbsp; list from variables with arguments: variable name(s) or <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; part of a variable name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm export variables&nbsp;&nbsp; export from variables with arguments: stdout or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; directory followed by variable name(s) or part of a&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; variable name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm report variables&nbsp;&nbsp; report from variables with arguments: variable name(s)&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or part of a variable name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm import variables&nbsp;&nbsp; import from variables with arguments: stdout or&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; directory&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm list views&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list from views with arguments:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />&nbsp;sm export views&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; export from views with arguments: stdout or directory&nbsp;&nbsp; <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; followed by view name(s)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p></blockquote>
+<p><b>DRUSH FAQ</b><br /><b>¿Se puede utilizar drush sobre Windows?</b><br />En principio si. En la práctica, ninguno de los desarrolladores de este módulo utiliza Windows en su trabajo diario  por lo que aunque "teóricamente" php es compatible sobre Windows y otros sistemas operativos, siempre existe la posibilidad de algo no funcione como debe. Sin embargo, se aceptan gustosamente parches para solucionar cualquier problema que surja :)<br /><a href="http://civicactions.com/blog/2009/jun/10/drush_20_released_screencast_1_installing_drush_and_getting_started#comment-3067" title="http://civicactions.com/blog/2009/jun/10/drush_20_released_screencast_1_installing_drush_and_getting_started#comment-3067">http://civicactions.com/blog/2009/jun/10/drush_20_released_screencast_1_...</a></p>
+<p></p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+</ul></div>
+<div id="comments">
+  <a id="comment-1"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="index.html#comment-1" class="active">Gracias por el trabajo de</a></h3>
+
+  <div class="submitted">
+    Enviado  por mbria (no verificado) el  Vie, 02/12/2010 - 07:52.  </div>
+
+  <div class="content">
+    <p>Gracias por el trabajo de compilación y traducción.</p>
+<p>Creo que este es de los únicos howtos de drush en español.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="../../../comment/reply/20/1/">responder</a></li>
+</ul></div>
+<div class="box">
+
+  <h2>Enviar un comentario nuevo</h2>
+
+  <div class="content"><form action="http://www.drupblue.net/comment/reply/20"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Su nombre: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Página principal: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comentario: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea required"></textarea>
+</div>
+<div class="wysiwyg wysiwyg-format-1 wysiwyg-editor-none wysiwyg-field-edit-comment wysiwyg-status-1 wysiwyg-toggle-1 wysiwyg-resizable-1"><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div><p><a href="../../../filter/tips/">Más información sobre opciones de formato</a></p><input type="hidden" name="form_build_id" id="form-23033109111a8fab0e1dcaa2491fe039" value="form-23033109111a8fab0e1dcaa2491fe039"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-preview" value="Previsualizar"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Consejos de redacción | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/files/css/dcff1dba2c9ca48349d1d3d1da9684d4/index.css" />
+  <script type="text/javascript" src="../../sites/files/js/bffbe260d1e16202df562e57718425dd/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-filter no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="..//"><img src="../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../blog/" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Consejos de redacción</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <ul class="tips"><li id="filter-filter-2">Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li id="filter-filter-0"><p>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</p>
+<p>Este sitio admite contenido HTML. Aprender todo el HTML es una tarea ardua e intimidante, pero aprender unas cuantas «etiquetas» HTML básicas es muy sencillo. Esta tabla proporciona ejemplos para cada etiqueta que está activa en el sitio.</p>
+<p>Para más información, puede ver las <a href="http://www.w3.org/TR/html/">especificaciones HTML</a> de W3C o usar su motor de búsqueda favorito para buscar otros sitios que traten sobre HTML.</p><table class="sticky-enabled">
+ <thead><tr><th>Descripción de la etiqueta</th><th>Teclea</th><th>Obtiene</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td class="description">Las anclas se usan para hacer enlaces a otras páginas.</td><td class="type"><code>&lt;a href=&quot;http://www.drupblue.net&quot;&gt;Drupblue&lt;/a&gt;</code></td><td class="get"><a href="..//">Drupblue</a></td> </tr>
+ <tr class="even"><td class="description">Enfatizado</td><td class="type"><code>&lt;em&gt;Enfatizado&lt;/em&gt;</code></td><td class="get"><em>Enfatizado</em></td> </tr>
+ <tr class="odd"><td class="description">Fuerte</td><td class="type"><code>&lt;strong&gt;Fuerte&lt;/strong&gt;</code></td><td class="get"><strong>Fuerte</strong></td> </tr>
+ <tr class="even"><td class="description">Citado</td><td class="type"><code>&lt;cite&gt;Citado&lt;/cite&gt;</code></td><td class="get"><cite>Citado</cite></td> </tr>
+ <tr class="odd"><td class="description">Texto codificado que se usa para mostrar código fuente de programación</td><td class="type"><code>&lt;code&gt;Codificado&lt;/code&gt;</code></td><td class="get"><code>Codificado</code></td> </tr>
+ <tr class="even"><td class="description">Lista desordenada: use &lt;li&gt; para comenzar cada elemento de la lista</td><td class="type"><code>&lt;ul&gt; &lt;li&gt;Primer elemento&lt;/li&gt; &lt;li&gt;Segundo elemento&lt;/li&gt; &lt;/ul&gt;</code></td><td class="get"><ul> <li>Primer elemento</li> <li>Segundo elemento</li> </ul></td> </tr>
+ <tr class="odd"><td class="description">Lista ordenada: utilice &lt;li&gt; para comenzar cada elemento de la lista</td><td class="type"><code>&lt;ol&gt; &lt;li&gt;Primer elemento&lt;/li&gt; &lt;li&gt;Segundo elemento&lt;/li&gt; &lt;/ol&gt;</code></td><td class="get"><ol> <li>Primer elemento</li> <li>Segundo elemento</li> </ol></td> </tr>
+ <tr class="even"><td class="description">Las listas de definiciones son similares a otras listas HTML. &lt;dl&gt; da comienzo a la lista de definiciones, &lt;dt&gt; da comienzo a cada término definido y &lt;dd&gt; da comienzo a la descripción de la definición.</td><td class="type"><code>&lt;dl&gt; &lt;dt&gt;Primer término&lt;/dt&gt; &lt;dd&gt;Primera definición&lt;/dd&gt; &lt;dt&gt;Segundo término&lt;/dt&gt; &lt;dd&gt;Segunda definición&lt;/dd&gt; &lt;/dl&gt;</code></td><td class="get"><dl> <dt>Primer término</dt> <dd>Primera definición</dd> <dt>Segundo término</dt> <dd>Segunda definición</dd> </dl></td> </tr>
+</tbody>
+</table>
+
+<p>Los caracteres menos habituales se pueden introducir directamente sin mayor complicación.</p>
+<p>Si tiene problemas, intente usar entidades de caracteres HTML. Un ejemplo de esto es &amp;amp;, que se usa para conseguir el carácter &amp;. Tiene una lista completa de las entidades HTML en la página <a href="http://www.w3.org/TR/html4/sgml/entities.html">de entidades</a>. Entre los caracteres disponibles están:</p><table class="sticky-enabled">
+ <thead><tr><th>Descripción del carácter</th><th>Teclea</th><th>Obtiene</th> </tr></thead>
+<tbody>
+ <tr class="odd"><td class="description">Ampersand</td><td class="type"><code>&amp;amp;</code></td><td class="get">&amp;</td> </tr>
+ <tr class="even"><td class="description">Mayor que</td><td class="type"><code>&amp;gt;</code></td><td class="get">&gt;</td> </tr>
+ <tr class="odd"><td class="description">Menor que</td><td class="type"><code>&amp;lt;</code></td><td class="get">&lt;</td> </tr>
+ <tr class="even"><td class="description">Comillas</td><td class="type"><code>&amp;quot;</code></td><td class="get">&quot;</td> </tr>
+</tbody>
+</table>
+</li><li id="filter-filter-1">Las líneas y los párrafos se reconocen automáticamente. Las etiquetas &lt;br /&gt; para el salto de línea y &lt;p&gt; y &lt;/p&gt; para abrir y cerrar el párrafo se insertan automáticamente. Si los párrafos no se reconocen, simplemente añada unas cuantas líneas vacías.</li></ul>
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../blog/" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../blog/" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

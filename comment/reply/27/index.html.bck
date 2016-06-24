@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Responder al comentario | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/files/css/dcff1dba2c9ca48349d1d3d1da9684d4/index.css" />
+  <script type="text/javascript" src="../../../sites/files/js/6f0a5bac51e4ded39fc45de857b4c240/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-comment no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="../..//"><img src="../../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../../blog/" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Responder al comentario</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <div id="node-27" class="node clear-block blog-content">
+
+
+  <h2><a href="../../../blog/osvaldo/instalando-drush-en-windows-xp/" title="instalando drush en windows xp">instalando drush en windows xp</a></h2>
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Mié, 06/02/2010 - 11:57.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Primero descargamos la ultima version de <a href="http://www.drupal.org/project/drush">drush</a>. Podemos utilizar la version HEAD sin mayores complicaciones. </p>
+<p>Hay que tener presente que la carpeta donde se descompacte debe estar aparte del raiz del sitio web.</p>
+<p>Antes de probar el drush nos debemos asegurar de que el php funcione desde la linea de comando. Para esto, al abrir la ventana del Simbolo de sistema y teclear php</p>
+<p>Mi PC -&gt; right click -&gt; Propiedades<br />
+Opciones AVanzadas -&gt; Variables de entorno<br />
+Variables del sistema<br />
+Path<br />
+Modificar</p>
+<p>En dependencia del stack de wamp (wamp, xamp, uniform server, etc) sera el camino que deberan agregar. En mi caso estoy utilizando el Acquia stack installer, por lo tanto, ese es el path que adiciono. Importante, no olvidar el punto y coma al inicio del path que significa que estamos agregando al que ya esta declarado.</p>
+<p>;C:\Archivos de programa\acquia-drupal\php</p>
+<p>cerramos todo y abrimos una ventana del simbolo de sistema. Una forma rapida seria Win+r y teclar cmd (despues de todo, la intención de utilizar el drush es abandonar la dependencia del mouse no :P).</p>
+<p>Probamos si el binario de php ya se puede ejecutar invocandolo con la opcion -v (es una forma sencilla de asegurarnos que el comando se ejecuta correctamente y nos imprime la version del mismo).</p>
+<p>php -v</p>
+<p>En mi caso aparece este error:</p>
+<p>"This application has failed to start because php5ts.dll was not found. Re-installing the application may fix this problem.".</p>
+<p>Lo resolvi ejecutando php.cmd en vez de php:</p>
+<p>C:\Documents and Settings\usuario\Sites&gt;php.cmd -v<br />
+PHP 5.2.11 (cli) (built: Sep 16 2009 19:39:46)<br />
+Copyright (c) 1997-2009 The PHP Group<br />
+Zend Engine v2.2.0, Copyright (c) 1998-2009 Zend Technologies<br />
+    with XCache v1.3.0, Copyright (c) 2005-2009, by mOo</p>
+<p>C:\Documents and Settings\usuario\Sites&gt;</p>
+<p>De tener este problema, deberemos actualizar el script que lanza el drush para que incorpore este cambio.<br />
+En la carpeta donde descompacte el drush: D:\usuario\Sites\drush</p>
+<p>Modificar<br />
+drush.bat<br />
+@echo off<br />
+REM See <a href="http://drupal.org/node/506448" title="http://drupal.org/node/506448">http://drupal.org/node/506448</a> for more information.<br />
+@php.exe "%~dp0drush.php" %*</p>
+<p>por<br />
+@echo off<br />
+REM See <a href="http://drupal.org/node/506448" title="http://drupal.org/node/506448">http://drupal.org/node/506448</a> for more information.<br />
+@php.cmd "%~dp0drush.php" %*</p>
+<p>probamos de nuevo ...</p>
+<p>C:\Documents and Settings\usuario\Sites\drush&gt;drush<br />
+Execute a drush command. Run `drush help [command]` to view command-specific<br />
+help.</p>
+<p>Examples:<br />
+ drush dl cck zen                          Download CCK module and Zen theme.<br />
+ drush --uri=http://example.com status     Show status command for the<br />
+                                           example.com multi-site.<br />
+ drush help --pipe                         A space delimited list of commands</p>
+<p>Options:<br />
+ -r , --root=                  Drupal root directory to use<br />
+                                           (default: current directory)</p>
+<p>et voila! ;)</p>
+<p>Antes de comenzar a utilizar el drush hay dos cosas aun que deberemos hacer. Una es instalar las herramientas que nos permitiran descargar e instalar los modulos: libarchive, wget y gzip. Consultar <a href="http://drupal.org/node/594744" title="http://drupal.org/node/594744">http://drupal.org/node/594744</a> para los enlaces de descarga.</p>
+<p>En la pagina de la guia recomiendan utilizar bsdtar como tar, por lo tanto, abrimos la carpeta en el explorador de windows:<br />
+C:\Archivos de programa\GnuWin32\bin<br />
+y copiamos bsdtar.exe comotar.exe</p>
+<p>Ahora adicionamos al Path tanto el camino de los binarios de las herramientas Gnu como el camino para el comando drush, en concreto, tendriamos que adicionar esto:<br />
+;D:\usuario\Sites\drush;C:\Archivos de programa\GnuWin32\bin</p>
+<p>et voila!</p>
+<p>C:\Documents and Settings\usuario\Sites\acquia-drupal-site\acquia-drupal\sites\default\modules&gt;drush dl token<br />
+Project token (6.x-1.12) downloaded to C:/Documents and                [success]<br />
+Settings/usuario/Sites/acquia-drupal-site/acquia-drupal/sites/all/modules/token.</p>
+<p>Bibliografia<br />
+Installing Drush on Windows: <a href="http://drupal.org/node/594744" title="http://drupal.org/node/594744">http://drupal.org/node/594744</a><br />
+Configurando la ventana del simbolo de sistema: <a href="http://www.codinghorror.com/blog/2005/07/stupid-command-prompt-tricks.html" title="http://www.codinghorror.com/blog/2005/07/stupid-command-prompt-tricks.html">http://www.codinghorror.com/blog/2005/07/stupid-command-prompt-tricks.html</a></p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+</ul></div>
+<div class="box">
+
+  <h2>Responder</h2>
+
+  <div class="content"><form action="http://www.drupblue.net/comment/reply/27"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Su nombre: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Página principal: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comentario: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea required"></textarea>
+</div>
+<div class="wysiwyg wysiwyg-format-1 wysiwyg-editor-none wysiwyg-field-edit-comment wysiwyg-status-1 wysiwyg-toggle-1 wysiwyg-resizable-1"><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div><p><a href="../../../filter/tips/">Más información sobre opciones de formato</a></p><input type="hidden" name="form_build_id" id="form-bbc7c5f4aede29af8f7d4993016a444b" value="form-bbc7c5f4aede29af8f7d4993016a444b"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-preview" value="Previsualizar"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../blog/" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../../blog/" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

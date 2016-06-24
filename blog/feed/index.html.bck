@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xml:base="http://www.drupblue.net"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+ <title>Drupblue blogs</title>
+ <link>http://www.drupblue.net/blog</link>
+ <description></description>
+ <language>es</language>
+<item>
+ <title>instalando drush en windows xp</title>
+ <link>http://www.drupblue.net/blog/osvaldo/instalando-drush-en-windows-xp</link>
+ <description>&lt;p&gt;Primero descargamos la ultima version de &lt;a href=&quot;http://www.drupal.org/project/drush&quot;&gt;drush&lt;/a&gt;. Podemos utilizar la version HEAD sin mayores complicaciones. &lt;/p&gt;
+&lt;p&gt;Hay que tener presente que la carpeta donde se descompacte debe estar aparte del raiz del sitio web.&lt;/p&gt;
+&lt;p&gt;Antes de probar el drush nos debemos asegurar de que el php funcione desde la linea de comando. Para esto, al abrir la ventana del Simbolo de sistema y teclear php&lt;/p&gt;
+&lt;p&gt;Mi PC -&amp;gt; right click -&amp;gt; Propiedades&lt;br /&gt;
+Opciones AVanzadas -&amp;gt; Variables de entorno&lt;br /&gt;
+Variables del sistema&lt;br /&gt;
+Path&lt;br /&gt;
+Modificar&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/instalando-drush-en-windows-xp&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/instalando-drush-en-windows-xp#comments</comments>
+ <pubDate>Wed, 02 Jun 2010 14:57:08 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">27 at http://www.drupblue.net</guid>
+</item>
+<item>
+ <title>formateando campos cck en un template</title>
+ <link>http://www.drupblue.net/blog/osvaldo/formateando-campos-cck-en-un-template</link>
+ <description>&lt;p&gt;Cuando utilizaba un template (.tpl.php) para hacer el theming de un node creado a partir de un tipo de contenido cualquiera, solia imprimir los campos de esta manera:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;lt;?&lt;br /&gt;&amp;nbsp;php print $node-&amp;gt;field_location[0][&#039;value&#039;]; &lt;br /&gt;?&amp;gt;&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;pero ...&lt;br /&gt;en primer lugar, eso funciona bien para los campos texto, pero no todos son texto..&lt;br /&gt;algunos son taxonomias.. que se mostrarian asi:&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;lt;?php&lt;br /&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; $term = taxonomy_get_term($node-&amp;gt;field_city[0][&#039;value&#039;]);&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/formateando-campos-cck-en-un-template&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/formateando-campos-cck-en-un-template#comments</comments>
+ <pubDate>Fri, 04 Sep 2009 18:00:04 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">25 at http://www.drupblue.net</guid>
+</item>
+<item>
+ <title>creando nuevos sitios en un multisite con un comando</title>
+ <link>http://www.drupblue.net/blog/osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando</link>
+ <description>&lt;p&gt;Una de las ventajas de utilizar Drupal es beneficiarnos de su capacidad multisitio. Esto es poder tener sitios independientes (tanto en contenido como en nombre de dominio) en una misma instalación de un Drupal.&lt;/p&gt;
+&lt;p&gt;Este es un script que había armado hace algun tiempo atrás y hoy lo &lt;a target=&quot;_blank&quot; href=&quot;http://groups.drupal.org/node/23583#comment-86096&quot;&gt;posteé&lt;/a&gt; en el grupo de usuarios de Argentina respondiendole a alguien que pedia algo similar.&lt;/p&gt;
+&lt;p&gt;Dejo aca otra copia para tenerlo más accesible.&lt;/p&gt;
+&lt;blockquote&gt;&lt;p&gt;#!/bin/sh&lt;/p&gt;
+&lt;/blockquote&gt;&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/creando-nuevos-sitios-en-un-multisite-con-un-comando#comments</comments>
+ <pubDate>Mon, 03 Aug 2009 03:38:36 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">24 at http://www.drupblue.net</guid>
+</item>
+<item>
+ <title>Utilizando Aegir</title>
+ <link>http://www.drupblue.net/blog/osvaldo/utilizando-aegir</link>
+ <description>&lt;p&gt;Esta es la tercera y última parte de los artículos que acompañan la charla impartida en el Drupalcamp de Buenos Aires el pasado Junio 25 de 2009.&lt;/p&gt;
+&lt;p&gt;El trabajo con Aegir es muy sencillo desde el propio instante en que lo instalamos.&lt;/p&gt;
+&lt;p&gt;Puede consultar en flickr una &lt;a target=&quot;_blank&quot; href=&quot;http://www.flickr.com/photos/39919907@N04/sets/72157620560296723/&quot;&gt;galeria que muestra como utilizar Aegir&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/utilizando-aegir&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/utilizando-aegir#comments</comments>
+ <pubDate>Mon, 29 Jun 2009 05:55:51 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">22 at http://www.drupblue.net</guid>
+</item>
+<item>
+ <title>Instalando Aegir</title>
+ <link>http://www.drupblue.net/blog/osvaldo/instalando-aegir</link>
+ <description>&lt;p&gt;&lt;img src=&quot;/sites/files/aegir.png&quot; /&gt;&lt;br /&gt;
+&lt;a href=&quot;http://groups.drupal.org/aegir-hosting-system&quot; title=&quot;http://groups.drupal.org/aegir-hosting-system&quot;&gt;http://groups.drupal.org/aegir-hosting-system&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;¿Que es Aegir?&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;i&gt;versión sencilla&lt;/i&gt;&lt;br /&gt;Ægir  es un conjunto de módulos para Drupal que le permiten administrar varios sitios en Drupal de forma simúltanea y centralizada. &lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/instalando-aegir&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/instalando-aegir#comments</comments>
+ <pubDate>Sat, 27 Jun 2009 17:51:30 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">21 at http://www.drupblue.net</guid>
+</item>
+<item>
+ <title>Utilizando Drush</title>
+ <link>http://www.drupblue.net/blog/osvaldo/utilizando-drush</link>
+ <description>&lt;p&gt;&lt;b&gt;Charla sobre Drush en el Drupalcamp de Buenos Aires&lt;/b&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://drupal.org/project/drush&quot; title=&quot;http://drupal.org/project/drush&quot;&gt;http://drupal.org/project/drush&lt;/a&gt;&lt;br /&gt;Drush fue creado originalmente por Arto para Drupal 4.7 (este código alfa aún se puede encontrar en la rama DRUPAL-4-7). En Mayo del 2007, fue parcialmente reescrito y rediseñado para Drupal 5 por frando. Desde el 2008, este módulo ha sido mantenido por Moshe Weitzman, Owen Barton y Adrian Rossouw.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.drupblue.net/blog/osvaldo/utilizando-drush&quot; target=&quot;_blank&quot;&gt;leer más&lt;/a&gt;&lt;/p&gt;</description>
+ <comments>http://www.drupblue.net/blog/osvaldo/utilizando-drush#comments</comments>
+ <pubDate>Sat, 27 Jun 2009 04:37:37 +0000</pubDate>
+ <dc:creator>osvaldo</dc:creator>
+ <guid isPermaLink="false">20 at http://www.drupblue.net</guid>
+</item>
+</channel>
+</rss>

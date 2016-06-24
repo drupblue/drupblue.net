@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>Instalando Aegir | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/files/css/e885ea252dd284875c6decef277d9457/index.css" />
+  <script type="text/javascript" src="../../../sites/files/js/6f0a5bac51e4ded39fc45de857b4c240/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-blog no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="../..//"><img src="../../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">Instalando Aegir</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <div id="node-21" class="node clear-block blog-content">
+
+
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Sáb, 06/27/2009 - 14:51.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p><img src="../../../sites/files/aegir/index.png" /><br />
+<a href="http://groups.drupal.org/aegir-hosting-system" title="http://groups.drupal.org/aegir-hosting-system">http://groups.drupal.org/aegir-hosting-system</a></p>
+<p><b>¿Que es Aegir?</b></p>
+<p><i>versión sencilla</i><br />Ægir  es un conjunto de módulos para Drupal que le permiten administrar varios sitios en Drupal de forma simúltanea y centralizada. <br />Logra esto al brindarle mediante una interface sencilla basada en Drupal el control de la totalidad de su red de sitios. Cada sitio es un nodo de Drupal, por lo que crear un nuevo sitio se reduce a crear un nuevo nodo de tipo Sitio. Para actualizar sitios o hacerles un respaldo, solo deberá invocar las opciones disponibles, mediante mecanismos similares a los que utiliza cuando trabaja con nodos.<br /> <i><br />versión técnica</i><br />Aegir es un sistema de administración de instancias distribuidas que permite a usuarios autorizados manejar múltiples instalaciones de Drupal en uno o mas servidores,  a través de una interface central basada en Drupal también. Esta diseñada para ofrecer solución a muchos de los problemas que los administradores enfrentan comunmente al lidiar con soluciones de hospedaje masiva. Proporciona las bases para el desarrollo personalizado y la administración de sitios en Drupal y servicios relacionados.</p>
+<p><b>¿Que es Aegir?</b></p>
+<p>En la mitología nórdica,  Ægir era el dios de los océanos. Por lo que si Drupal es una gota de agua,  Ægir es la deidad de largas masas de agua.</p>
+<p><b>¿Qué necesito para correr Aegir?</b></p>
+<ul>
+<li>Un sistema capaz de ejecutar Drupal.</li>
+<li>Un sistema operativo basado en Unix. La mayor parte de la funcionalidad que ofrece este sistema tiene lugar en el back-end, a través de programación en la linea de comando. Algunas de las funcionalidades de las que hace uso este sistema (como los enlaces simbólicos) no se encuentran disponibles para los usuarios en Windows. No existen planes actualmente de proporcionar soporte para Windows.</li>
+<li>Su propio servidor. El nivel de acceso requerido para poder configurar este sistema esta muy por encima de las posibilidades que ofrecen los actuales planes de hospedaje compartido.</li>
+</ul>
+<p><b>Cuales son los componentes de Aegir</b></p>
+<p>Existen tres componentes principales de este sistema</p>
+<ul>
+<li><b>Provision</b>. Proporciona el sistema de back end utilizado para las tareas a nivel del sistema operativo tales como la creación de archivos de configuración, el manejo de bases de datos y los archivos de respaldo.</li>
+<li><b>Hosting</b>. Proporciona el front end para la creación y el mantenimiento de los sitios en Drupal. Cada uno de sus sitios será mapeado a los tipos de nodo proporcionados por este módulo. También se encarga de la cola de tareas enviadas al backend y la configuración del sistema de hospedaje.</li>
+<li><b>Hostmaster</b>. Brinda el enlace entre la funcionalidad del front end del hosting y el back end del provisioning logrando un paquete único. Se encarga de la inicialización y auto-detección de los parámetros iniciales de configuración y lo dirige hacia el amigable asistente de instalación. Para comenzar a utilizar el sistema Aegir, usted deberá instalar un nuevo sitio utilizando el perfil hostmaster, el cual utilizara entonces para administrar los sitios que hospede.</li>
+</ul>
+<p><b>Instalando aegir</b><br /><a href="http://www.developmentseed.org/blog/2009/may/20/aegir-scratch-installing-aegir-02-rc-1" title="http://www.developmentseed.org/blog/2009/may/20/aegir-scratch-installing-aegir-02-rc-1">http://www.developmentseed.org/blog/2009/may/20/aegir-scratch-installing...</a><br />comandos y screencast<br /><b><br />Instalación de los paquetes requeridos</b></p>
+<blockquote><p>(<br /># mantenimiento básico del servidor<br />sudo apt-get update; <br />sudo apt-get upgrade; </p>
+<p># Específico para este servidor<br />sudo apt-get install openssh-server;<br /># se puede utilizar postfix, el requerimiento real es tener un MTA<br />sudo apt-get install sendmail;</p>
+<p># Componentes requeridos<br />sudo apt-get install wget cvs;<br />sudo apt-get install mysql-server mysql-client;<br />sudo apt-get install apache2;<br />sudo apt-get install php5 php5-cli php5-mysql;</p>
+<p># Esto solo es necesario si vamos a utilizar un dominio local en nuestro server<br />sudo apt-get install bind9;<br />)</p></blockquote>
+<p><b>Configurando el servicio de DNS (bind)</b><br />Esto nos permitira establecer un entorno de prueba. Se va a utilizar el dominio *.local para los sitios que se van a crear mediante el Aegir.</p>
+<blockquote><p>sudo vim /etc/bind/named.conf.local &amp;&amp; <br />sudo vim /etc/bind/db.local &amp;&amp; <br />sudo /etc/init.d/bind9 restart</p>
+<p>sudo vim /etc/resolv.conf &amp;&amp;<br />sudo vim /etc/dhcp3/dhclient.conf &amp;&amp;<br />sudo dhclient</p></blockquote>
+<p>Probamos que el servidor de DNS este resolviendo bien con&nbsp; un hostname cualquiera ...<br />
+<blockquote>ping random.local</blockquote></p>
+<p>Estos archivos son modificados:</p>
+<p>nota: descomentarear la linea en <b>/etc/bind/named.conf </b><br />
+<blockquote>include "/etc/bind/named.conf.local";</blockquote></p>
+<p>si estuviera comentareada con "//".</p>
+<p><b>named.conf.local</b><br />
+<blockquote>zone "local" {<br />type master;<br />file "/etc/bind/db.localdomain";	<br />};</blockquote></p>
+<p><b>db.localdomain</b><br />
+<blockquote>local.  7200    IN  SOA local. root.local. (<br />        &nbsp; &nbsp;2009062501      ; Serial<br />                &nbsp; &nbsp;15      ; Refresh every 15 minutes<br />              &nbsp; &nbsp;86400     ; Retry<br />            &nbsp; &nbsp;2419200     ; Expire<br />             &nbsp; &nbsp;604800 )   ; Negative Cache TTL<br />;<br />@   IN  NS  localhost.<br />@   IN  MX 10   localhost.<br />@   IN  A   127.0.0.1<br />    IN  A   127.0.0.1<br />*.local.    IN  A   127.0.0.1</blockquote></p>
+<p><b>dhclient.conf</b><br />
+<blockquote>supersede domain-name "local";<br />prepend domain-name-servers 127.0.0.1;</blockquote></p>
+<p><b>resolv.conf</b><br />
+<blockquote>domain local<br />nameserver 127.0.0.1<br />nameserver 200.42.0.111<br />nameserver 200.42.97.111<br />nameserver 200.42.97.110<br />nameserver 200.42.0.110<br />nameserver 172.20.2.201</blockquote></p>
+<p><b><br />Crear el usuario aegir</b></p>
+<blockquote><p>sudo mkdir /var/aegir<br />sudo adduser aegir --home /var/aegir &amp;&amp;<br />su - aegir</p></blockquote>
+<p>Ejemplo:</p>
+<blockquote><p>osvaldo@vostro:~$ sudo adduser aegir --home /var/aegir <br />Adding user `aegir' ...<br />Adding new group `aegir' (1002) ...<br />Adding new user `aegir' (1002) with group `aegir' ...<br />Creating home directory `/var/aegir' ...<br />Copying files from `/etc/skel' ...<br />Enter new UNIX password: <br />Retype new UNIX password: <br />passwd: password updated successfully<br />Changing the user information for aegir<br />Enter the new value, or press ENTER for the default<br />	Full Name []: <br />	Room Number []: <br />	Work Phone []: <br />	Home Phone []: <br />	Other []: <br />Is the information correct? [y/N] y</p></blockquote>
+<p>Ahora iniciamos sesión como el usuario aegir:</p>
+<blockquote><p>osvaldo@vostro:~$ su - aegir<br />Password: <br />aegir@vostro:~$ </p></blockquote>
+<p><b>Descargar el aegir</b><br />NOTA: Los siguiente comandos fueron válidos en el momento en que se redacto este documento. Dichos comandos pueden haber variado. Consulte el archivo INSTALL.txt de la ultima versión liberada de Aegir.</p>
+<blockquote><p>
+(<br />export CVSROOT=:pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal-contrib<br />cvs login</p>
+<p># Descargar Drush<br />cvs -z6 co -d drush -rDRUPAL-6--2-0-RC1 contributions/modules/drush</p>
+<p>#&nbsp;Descargar el modulo provision<br />mkdir ~/.drush<br />cvs -z6 co -d .drush/provision -rDRUPAL-6--0-2-RC1 contributions/modules/provision</p>
+<p>#&nbsp;Descargar el hostmaster install profile<br />cvs -z6 co -d hostmaster -rDRUPAL-5--0-2-RC1 contributions/profiles/hostmaster<br />mkdir hostmaster/modules<br />mkdir hostmaster/themes</p>
+<p>#&nbsp;Descargar hosting front end<br />cvs -z6 co -d hostmaster/modules/hosting -rDRUPAL-5--0-2-RC1 contributions/modules/hosting</p>
+<p>#&nbsp;Descargar componente opcionales, el tema eldir y el admin_menu<br />cvs -z6 co -d hostmaster/themes/eldir -rDRUPAL-5--0-2-RC1 contributions/themes/eldir<br />~/drush/drush.php dl admin_menu-5.x-2.8 --destination=hostmaster/modules<br />)
+</p></blockquote>
+<p>     Se veria algo asi:</p>
+<blockquote><p>Logging in to :pserver:anonymous@cvs.drupal.org:2401/cvs/drupal-contrib<br />cvs login: CVS password file /var/aegir/.cvspass does not exist - creating a new file<br />cvs checkout: Updating drush<br />U drush/README.txt<br />U drush/drush<br />U drush/drush.bat<br />U drush/drush.php<br />U drush/example.drush.inc<br />U drush/example.drushrc.php<br />cvs checkout: Updating drush/commands<br />cvs checkout: Updating drush/commands/core<br />...<br />...<br />...<br />U hostmaster/themes/eldir/images/page.png<br />U hostmaster/themes/eldir/images/sprite.png<br />Project admin_menu (5.x-2.8) downloaded to hostmaster/modules/.      [success]<br />aegir@vostro:~$ </p></blockquote>
+<p><b>Configurar Apache - Crear un virtual host</b></p>
+<blockquote><p>(<br />mkdir -p ~/config/vhost.d<br />cp hostmaster/apache2.conf.txt ~/config/vhost.d/aegir.local<br />vim ~/config/vhost.d/aegir.local<br />)</p></blockquote>
+<p>cambiar la linea 25<br />
+<blockquote>    ServerName aegir.example.com</blockquote></p>
+<p>por esta:<br />
+<blockquote>    ServerName aegir.local</blockquote></p>
+<p><b>Descargar Drupal</b><br />Para este paso aprovechamos las ventajas que nos ofrece el comando drush. Descargamos Drupal para el directorio que habiamos especificado como raiz en el archivo del virtual host</p>
+<blockquote><p>(<br />drush/drush.php dl drupal-5.18<br />mv drupal-5.18 drupal-5.x<br />mv hostmaster drupal-5.x/profiles/<br />)</p></blockquote>
+<p>Se veria asi:<br />
+<blockquote>aegir@vostro:~$ (<br /> /&gt; drush/drush.php dl drupal-5.18<br /> /&gt; mv drupal-5.18 drupal-5.x<br /> /&gt; mv hostmaster drupal-5.x/profiles/<br /> /&gt; )<br />Project drupal (5.18) downloaded to /var/aegir/.                     [success]</blockquote></p>
+<p>Nota: En el momento en que se redacta este documento, el frontend aún requeria Drupal 5. Esta situación estaba justo por cambiar (noticia cortesía de <a target="_blank" href="http://drupal.org/user/1274">anarcat</a>) y una versión para Drupal 6 estaba justo por liberarse.</p>
+<p><b>Configurando Apache&nbsp;<br />Habilitando los módulos requeridos y la directiva Include</b></p>
+<p>Los pasos anteriores se realizaron como el usuario aegir. Salga de dicha sesión como usuario aegir y ejecute los comandos requeridos.</p>
+<p>En Ubuntu/Debian, el archivo de configuración del Apache es /etc/apache2/apache2.conf. Este archivo no se debe modificar pues las actualizaciones del Apache lo modifican de ser necesario. Para garantizar que sus modificaciones no se pierdan en el caso de una actualización, deberá utilizar el archivo httpd.conf.<br />Para otros sistemas operativos el archivo a modificar pudiera variar.</p>
+<blockquote><p>logout<br />(<br />sudo a2enmod php5<br />sudo a2enmod rewrite<br />sudo vim /etc/apache2/httpd.conf<br />sudo /etc/init.d/apache2 restart<br />)</p></blockquote>
+<p>Archivos modificados :<br />
+<blockquote>httpd.conf<br />Include /var/aegir/config/vhost.d/*</blockquote></p>
+<p><b>Configurando MySQL - Creando la base de datos para el hostmaster y su cuenta de usuario</b></p>
+<blockquote><p>(<br />mysqladmin -uroot -psecreto create hostmaster<br />echo "GRANT ALL ON hostmaster.* TO 'hostmaster'@'localhost' IDENTIFIED BY 'secreto'" |<br />   mysql -uroot  -psecreto hostmaster<br />)</p></blockquote>
+<p><b>Configurando PHP - Definiendo el limite de memoria</b><br />(este paso es opcional, pero nunca esta de más ;)</p>
+<blockquote><p>(<br />sudo vim /etc/php5/cli/php.ini<br />sudo vim /etc/php5/apache2/php.ini<br />sudo /etc/init.d/apache2 restart<br />)</p></blockquote>
+<p>Se incrementó el límite de 32M a 64M.<br />
+<blockquote>;memory_limit = 32M      ; Maximum amount of memory a script may consume (32MB)<br />memory_limit = 64M      ; Maximum amount of memory a script may consume (16MB)</blockquote></p>
+<p><b>Cambiar los permisos del archivo settings.php</b><br />(para la instalacion del hostmaster)<br />
+<blockquote>sudo chmod 777 /var/aegir/drupal-5.x/sites/default/settings.php</blockquote></p>
+<p>Iniciar la instalación del aegir<br />Deberá acceder a la url del sitio para comenzar la instalación del frontend, que como tal, consiste en instalar un drupal 5 eligiendo el Hostmaster profile.</p>
+<blockquote><p>http://aegir.local</p></blockquote>
+<p>Una vez terminada la instalación del sitio, recuerde eliminar los permisos de escritura del archivo de configuración<br />
+<blockquote>sudo chmod 644 /var/aegir/drupal-5.x/sites/default/settings.php</blockquote></p>
+<p><b>Asistente de instalación</b></p>
+<p>El instalador de aegir ofrece un asistente que lo guiará paso a paso. Cada uno con documentación disponible sobre los comandos a ejecutar en cada página. Algunos de estos pasos incluyen:<br /><b><br />Adicionar el usuario aegir al grupo www-data</b><br />
+<blockquote>sudo adduser aegir www-data</blockquote></p>
+<p>Quedaría asi:<br />
+<blockquote>root@vostro:/etc/apache2# sudo adduser aegir www-data<br />Adding user `aegir' to group `www-data' ...<br />Adding user aegir to group www-data<br />Done.</blockquote></p>
+<p><b><br />Configurando sudo</b><br />Otorgarle al usuario aegir permisos para reiniciar el apache.<br />
+<blockquote>sudo visudo </blockquote></p>
+<p>Adicionar al final la siguiente linea :</p>
+<blockquote><p>aegir ALL=NOPASSWD: /usr/sbin/apache2ctl </p></blockquote>
+<p><b><br />Configurar MySQL</b>&nbsp;<br />Adicionar una cuenta con permisos de superusuario.</p>
+<p>Conectese al mysql como usuario administrador (root):</p>
+<blockquote><p>mysql -uroot -psecreto mysql;</p></blockquote>
+<p>Nota: En este ejemplo la contraseña del usuario root es la palabra "secreto". Utilice la apropiada en su caso.</p>
+<p>Ejecute entonces el comando:</p>
+<blockquote><p>GRANT ALL PRIVILEGES ON *.* TO 'aegir'@'%' IDENTIFIED BY 'secreto' WITH GRANT OPTION;</p></blockquote>
+<p><b>Hosting setup </b></p>
+<p>
+<blockquote>su - aegir<br />cd /var/aegir/drupal-5.x<br />/var/aegir/drush/drush.php hosting setup</blockquote></p>
+<p>Resultado:<br />
+<blockquote>root@vostro:/etc/apache2# su - aegir<br />aegir@vostro:~$ cd /var/aegir/drupal-5.x<br />aegir@vostro:~/drupal-5.x$ /var/aegir/drush/drush.php hosting setup<br />php '/var/aegir/.drush/provision' hosting dispatch --root='/var/aegir/drupal-5.x'Dispatch command was run successfully                                [success]</blockquote></p>
+<p>Puede ejecutar el comando hosting dispatch manualmente<br />
+<blockquote>~/drush/drush.php --root=/var/aegir/drupal-5.x hosting dispatch</blockquote></p>
+<p>Se recomienda adicionarla como una&nbsp;tarea en el crontab<br />
+<blockquote>crontab -e<br />*/1 * * * * (php /var/aegir/drush/drush.php --root=/var/aegir/drupal-5.x hosting dispatch)</blockquote></p>
+<p><b>Descargar una nueva plataforma</b><br />
+<blockquote>~/drush/drush.php dl drupal-6.12</blockquote></p>
+<p>Resultado:<br />
+<blockquote>aegir@vostro:~$ ~/drush/drush.php dl drupal-6.12<br />Project drupal (6.12) downloaded to /var/aegir/.                     [success]<br />aegir@vostro:~$ </blockquote></p>
+  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+</ul></div>
+<div id="comments">
+  <div class="box">
+
+  <h2>Enviar un comentario nuevo</h2>
+
+  <div class="content"><form action="http://www.drupblue.net/comment/reply/21"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Su nombre: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Página principal: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comentario: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea required"></textarea>
+</div>
+<div class="wysiwyg wysiwyg-format-1 wysiwyg-editor-none wysiwyg-field-edit-comment wysiwyg-status-1 wysiwyg-toggle-1 wysiwyg-resizable-1"><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div><p><a href="../../../filter/tips/">Más información sobre opciones de formato</a></p><input type="hidden" name="form_build_id" id="form-8d43b6ddcd819723263d9bbcb079bf17" value="form-8d43b6ddcd819723263d9bbcb079bf17"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-preview" value="Previsualizar"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>

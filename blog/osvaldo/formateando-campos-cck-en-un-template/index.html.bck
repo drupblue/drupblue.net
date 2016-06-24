@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es" dir="ltr">
+
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+<head>
+  <title>formateando campos cck en un template | Drupblue</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="../../../misc/favicon/index.ico" type="image/x-icon" />
+  <link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/modules/codefilter/codefilter/index.css?I" />
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/files/css/e885ea252dd284875c6decef277d9457/index.css" />
+  <script type="text/javascript" src="../../../sites/files/js/6f0a5bac51e4ded39fc45de857b4c240/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, { "basePath": "/", "googleanalytics": { "trackOutgoing": 1, "trackMailto": 1, "trackDownload": 1, "trackDownloadExtensions": "7z|aac|avi|csv|doc|exe|flv|gif|gz|jpe?g|js|mp(3|4|e?g)|mov|pdf|phps|png|ppt|rar|sit|tar|torrent|txt|wma|wmv|xls|xml|zip" } });
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//--><!]]>
+</script>
+  <script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.easing.min/index.js"></script>
+<script type="text/javascript" src="../../../sites/all/themes/drupblue/js/jquery.lavalamp.min/index.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="../../../sites/all/themes/drupblue/css/lavaLamp/index.css" />
+
+
+</head>
+
+<body class="not-front not-logged-in page-node node-type-blog no-sidebars ">
+
+  <div id="page" class="container-16 clear-block">
+   
+    <div id="site-header" class="grid-16 clear-block">
+      <div id="branding" class="grid-5 clear-block alpha">
+                  <div id="logo" class="grid-5 alpha"><a href="../..//"><img src="../../../sites/files/drupblue_logo/index.png" alt="Inicio" title="Inicio" width="250" height="75" /></a></div>
+        	      </div><!-- branding -->
+
+          <div id="menuheader" class="grid-9  omega">
+        <ul class="lavaLamp"><li class="menu-269 first"><a href="../../../servicios/" title="servicios">Servicios</a></li>
+<li class="menu-1030"><a href="../../../portafolio/" title="Portafolio">Portafolio</a></li>
+<li class="menu-271"><a href="../../" title="Documentación">Documentación</a></li>
+<li class="menu-272"><a href="../../../nosotros/" title="Nosotros">Nosotros</a></li>
+<li class="menu-273 last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</ul>              </div>
+    
+   
+  
+
+
+    </div><!-- site-header grid-16 -->
+
+
+    <div id="main" class="column grid-16 ">
+                    <h1 class="title" id="page-title">formateando campos cck en un template</h1>
+                        
+      <div id="main-content" class="region clear-block">
+        <div id="node-25" class="node clear-block blog-content">
+
+
+
+  <div class="meta">
+      <span class="submitted">Enviado por osvaldo el Vie, 09/04/2009 - 15:00.</span>
+  
+    </div>
+
+  <div class="content ">
+    <p>Cuando utilizaba un template (.tpl.php) para hacer el theming de un node creado a partir de un tipo de contenido cualquiera, solia imprimir los campos de esta manera:</p>
+<blockquote><p>&lt;?<br />&nbsp;php print $node-&gt;field_location[0]['value']; <br />?&gt;</p></blockquote>
+<p>pero ...<br />en primer lugar, eso funciona bien para los campos texto, pero no todos son texto..<br />algunos son taxonomias.. que se mostrarian asi:</p>
+<blockquote><p>&nbsp;&nbsp;&nbsp; &lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $term = taxonomy_get_term($node-&gt;field_city[0]['value']);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print $term-&gt;name;<br />&nbsp;&nbsp;&nbsp; ?&gt;</p></blockquote>
+<p>pero ... (segundo pero) entonces tenemos los campos que son un date.<br />ahh, parece facil... pero no lo es, esta la cuestion del formato...</p>
+<p>primer intento<br />
+<blockquote>&lt;?php <br />&nbsp; print content_format('field_date', $node-&gt;field_birthday[0], 'iso'); <br />?&gt;</blockquote></p>
+<p>nop...</p>
+<p>segundo intento</p>
+<blockquote><p>// referenciado aca <a href="http://drupal.org/node/221151#comment-744973" title="http://drupal.org/node/221151#comment-744973">http://drupal.org/node/221151#comment-744973</a><br />// workaround here <a href="http://drupal.org/node/115706#comment-504436" title="http://drupal.org/node/115706#comment-504436">http://drupal.org/node/115706#comment-504436</a><br />$eventtime = strtotime($node-&gt;field_birthday[0]['value']);<br />$eventtime = $eventtime - 28800; //this is -8 hours for my timezone<br />echo date('m/d/Y \a\t g:ia', $eventtime);</p></blockquote>
+<p>este estaba mejor .. pero eso de restar el timezone era pan para hoy y<br />hambre para mañana....<br />segui investigando...<br />para hacer una historia larga corta, al final se muestra asi:</p>
+<blockquote><p>&lt;?php <br />print format_date($node-&gt;field_birthday[0]['value'], 'custom','F j, Y'); <br />?&gt;</p></blockquote>
+<p>Los tipos de formato que aceptan las fechas son&nbsp; "small", "medium", "large", y "custom" (como ya alguien dijo, <a target="_blank" href="http://gregorygo.com/2009/07/drupals-format_date-sizes-are-like-pizza/">similar a las pizzas</a> ;).</p>
+<p>custom utiliza la funcion del php, ejemplos:</p>
+<blockquote><p>&lt;?php<br />// Assuming today is March 10th, 2001, 5:16:18 pm, and that we are in the<br />// Mountain Standard Time (MST) Time Zone</p>
+<p>$today = date("F j, Y, g:i a");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // March 10, 2001, 5:16 pm<br />$today = date("m.d.y");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 03.10.01<br />$today = date("j, n, Y");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 10, 3, 2001<br />$today = date("Ymd");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 20010310<br />$today = date('h-i-s, j-m-y, it is w Day');&nbsp;&nbsp;&nbsp;&nbsp; // 05-16-18, 10-03-01,<br />1631 1618 6 Satpm01<br />$today = date('\i\t \i\s \t\h\e jS \d\a\y.');&nbsp;&nbsp; // it is the 10th day.<br />$today = date("D M j G:i:s T Y");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // Sat Mar 10 17:16:18 MST 2001<br />$today = date('H:m:s \m \i\s\ \m\o\n\t\h');&nbsp;&nbsp;&nbsp;&nbsp; // 17:03:18 m is month<br />$today = date("H:i:s");&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; // 17:16:18<br />?&gt;</p></blockquote>
+<p>mas referencias en
+<ul>
+<li><a target="_blank" href="http://www.php.net/manual/en/function.date.php">http://www.php.net/manual/en/function.date.php</a></li>
+<li><a target="_blank" href="http://api.drupal.org/api/function/format_date">http://api.drupal.org/api/function/format_date</a></li>
+</ul>
+</p><p>A tener en cuenta cuando trabajemos con fechas ...<br /><a target="_blank" href="http://drupal.org/node/373071">Use drupals format_date to avoid localization issues</a></p>
+<p>Instead of using php's date, use drupal's format_date to avoid problems with non-english dates.</p>
+<p><a target="_blank" href="http://drupal.org/node/355394">format_date vs. date</a></p>
+<p>To be simple and straight to the point: why<br />
+<blockquote>&lt;?php<br />format_date(1238536800, 'custom', 'Y-m-d');<br />?&gt;</blockquote></p>
+<p>and<br />
+<blockquote>&lt;?php<br />date('Y-m-d', 1238536800);<br />?&gt;</blockquote></p>
+<p>have different results? First one is 2009-03-31 (which is wrong), second one is 2009-04-01 (which is right).<br />Found a workaround:<br /><a target="_blank" href="http://drupal.org/node/187449">http://drupal.org/node/187449</a></p>
+<blockquote><p>&lt;?php<br />&nbsp;&nbsp; $my_date = strtotime($node-&gt;field_date[0]['value']);<br />&nbsp;&nbsp; $tz_offset = strtotime(date("M d Y H:i:s")) - strtotime(gmdate("M<br />d Y H:i:s"));<br />&nbsp;&nbsp; $my_date += $tz_offset;<br />&nbsp;&nbsp; print format_date($my_date, 'custom', 'D d F Y', NULL);<br />?&gt;</p></blockquote>
+<p>Seems to fix the problem.</p>
+<p>Aca se muestra otra forma que permite definir todo esto a traves de la interface web del drupal<br /><a target="_blank" href="http://www.leveltendesign.com/blog/dustin-currie/format-dates-drupal">http://www.leveltendesign.com/blog/dustin-currie/format-dates-drupal</a><br />sin embargo, no logre que me funcionara y no tuve tiempo para investigar que pasaba.</p>
+<p>Retomando el inicio y para imprimir los campos se recomienda <a target="_blank" href="http://drupalcontrib.org/api/function/content_format/6">content_format()</a></p>
+<p><b>INCORRECTO:</b><br />
+<blockquote>print $node-&gt;field_content_something[0]['value'];</blockquote></p>
+<p><b>CORRECTO:</b><br />
+<blockquote>print content_format('field_content_something', $node-&gt;field_content_something, $formatter = 'default', $node = NULL);</blockquote></p>
+<p>acorde a Greggles<br /><a target="_blank" href="http://growingventuresolutions.com/blog/drupal-security">http://growingventuresolutions.com/blog/drupal-security</a></p>
+<p>con lo que el ejemplo inicial, quedaría asi:</p>
+<blockquote><p>&nbsp;if ($node-&gt;field_location[0]['value']) {<br />&nbsp;&nbsp;&nbsp;&nbsp; print content_format('field_location',$node-&gt;field_location[0], $text_formatter, $node);<br />&nbsp;&nbsp; }</p></blockquote>
+<p>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" alt="" src="http://img.zemanta.com/pixy.gif?x-id=edb8eb36-a5c6-8c31-a00b-f3e598916408" /></div>
+</p>  </div>
+
+  <ul class="links inline"><li class="blog_usernames_blog first last"><a href="../../../bitacoras/osvaldo/" title="Read osvaldo&#039;s latest blog entries.">osvaldo&#039;s blog</a></li>
+</ul></div>
+<div id="comments">
+  <a id="comment-3"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="index.html#comment-3" class="active">Attractive section oof</a></h3>
+
+  <div class="submitted">
+    Enviado  por <a href="http://en.wikipedia.org/wiki/China_(Epcot)" rel="nofollow">Wikipedia Info About The Chinese Mainland</a> (no verificado) el  Sáb, 08/09/2014 - 23:58.  </div>
+
+  <div class="content">
+    <p>Attractive section oof content. I simply stumbledd upon your blog and<br />
+inn accession capital to assert that I acquire in fact enjoyed<br />
+account your blog posts. Any way I will be subscribing onn our augment<br />
+or even I success you get admission to constantly quickly.</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="../../../comment/reply/25/3/">responder</a></li>
+</ul></div>
+<a id="comment-4"></a>
+<div class="comment comment-published clear-block">
+  
+  
+  <h3><a href="index.html#comment-4" class="active">Hey! This is my first visit</a></h3>
+
+  <div class="submitted">
+    Enviado  por <a href="https://www.facebook.com/fifa15telecharger" rel="nofollow">fifa 15 télécharger</a> (no verificado) el  Mar, 10/07/2014 - 05:27.  </div>
+
+  <div class="content">
+    <p>Hey! This is my first visit to your blog! We are a group of volunteers and starting a new initiative in a community in the same<br />
+niche. Your blog provided us useful information to work on.<br />
+You have done a wonderful job!</p>
+      </div>
+
+  <ul class="links"><li class="comment_reply first last"><a href="../../../comment/reply/25/4/">responder</a></li>
+</ul></div>
+<div class="box">
+
+  <h2>Enviar un comentario nuevo</h2>
+
+  <div class="content"><form action="http://www.drupblue.net/comment/reply/25"  accept-charset="UTF-8" method="post" id="comment-form">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">Su nombre: </label>
+ <input type="text" maxlength="60" name="name" id="edit-name" size="30" value="Anonymous" class="form-text" />
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">E-mail: </label>
+ <input type="text" maxlength="64" name="mail" id="edit-mail" size="30" value="" class="form-text" />
+ <div class="description">El contenido de este campo se mantiene privado y no se mostrará públicamente.</div>
+</div>
+<div class="form-item" id="edit-homepage-wrapper">
+ <label for="edit-homepage">Página principal: </label>
+ <input type="text" maxlength="255" name="homepage" id="edit-homepage" size="30" value="" class="form-text" />
+</div>
+<div class="form-item" id="edit-comment-wrapper">
+ <label for="edit-comment">Comentario: <span class="form-required" title="Este campo es obligatorio.">*</span></label>
+ <textarea cols="60" rows="15" name="comment" id="edit-comment"  class="form-textarea required"></textarea>
+</div>
+<div class="wysiwyg wysiwyg-format-1 wysiwyg-editor-none wysiwyg-field-edit-comment wysiwyg-status-1 wysiwyg-toggle-1 wysiwyg-resizable-1"><ul class="tips"><li>Las direcciones de las páginas web y las de correo se convierten en enlaces automáticamente.</li><li>Etiquetas HTML permitidas: &lt;a&gt; &lt;em&gt; &lt;strong&gt; &lt;cite&gt; &lt;code&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</li><li>Saltos automáticos de líneas y de párrafos.</li></ul></div><p><a href="../../../filter/tips/">Más información sobre opciones de formato</a></p><input type="hidden" name="form_build_id" id="form-f2fc8eeff4360f5224c2fb1645e3429f" value="form-f2fc8eeff4360f5224c2fb1645e3429f"  />
+<input type="hidden" name="form_id" id="edit-comment-form" value="comment_form"  />
+<input type="submit" name="op" id="edit-preview" value="Previsualizar"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+</div>
+
+
+      </div><!-- main-content -->
+
+          </div><!-- main -->
+
+  
+  
+
+
+  
+        <div id="footer-region" class="region grid-16 clear-block">
+	    <div id="bottomcontent" class="menu2 clear-block">
+        <ul class="menu"><div class="grid-2 prefix-3 alpha" ><li class="expanded first"><a href="../../../servicios/" title="servicios">Servicios</a><ul class="menu"><li class="leaf first"><a href="../../../dise%c3%b1o/" title="Diseño">Diseño</a></li>
+<li class="leaf"><a href="../../../desarrollo-web/" title="Desarrollo Web">Desarrollo Web</a></li>
+<li class="leaf"><a href="../../../node/18/" title="Arquitectura de la información">Arquitectura de la informacion</a></li>
+<li class="leaf last"><a href="../../../node/19/" title="Hospedaje de misión crítica">Hospedaje</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../portafolio/" title="Portafolio">Portafolio</a><ul class="menu"><li class="leaf last"><a href="../../../identidad/" title="Identidad">Identidad</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../" title="Documentación">Documentación</a><ul class="menu"><li class="leaf last"><a href="../../" title="Blog">Blog</a></li>
+</ul></li>
+</div><div class="grid-2" ><li class="expanded"><a href="../../../nosotros/" title="Nosotros">Nosotros</a><ul class="menu"><li class="leaf first"><a href="../../../quienes-somos/" title="Quienes somos">Quienes somos</a></li>
+<li class="leaf last"><a href="../../../vision/" title="Vision">Vision</a></li>
+</ul></li>
+</div><div class="grid-2 omega crak" ><li class="leaf last"><a href="../../../contact/" title="Contacto">Contacto</a></li>
+</div></ul>        </div>
+    </div>
+        
+</div><!-- page -->
+
+
+  
+  <script type="text/javascript" src="../../../sites/files/js/ba2e9fd35372a0ef56a405a7fb52e96e/index.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+try{var pageTracker = _gat._getTracker("UA-5155520-11");pageTracker._trackPageview();} catch(err) {}
+//--><!]]>
+</script>
+</body>
+
+<!--  --><meta http-equiv="content-type" content="text/html;charset=utf-8"><!-- / -->
+</html>
